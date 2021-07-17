@@ -20,9 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4aebc6fc-2fb9-45bf-baea-8e583fda855a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/images/editor.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/preview.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,17 +82,17 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\workspace\source-code\gif\chrome-capture-gif\libs\font-awesome" />
-      <recent name="D:\workspace\source-code\gif\chrome-capture-gif\libs" />
-      <recent name="D:\workspace\source-code\gif\chrome-capture-gif\css" />
-      <recent name="D:\workspace\source-code\gif\chrome-capture-gif\src" />
-      <recent name="D:\workspace\source-code\gif\chrome-capture-gif" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\workspace\source-code\gif\chrome-capture-gif\images" />
       <recent name="D:\workspace\source-code\gif\chrome-capture-gif\lib\jquery" />
       <recent name="D:\workspace\source-code\gif\chrome-capture-gif\lib\gif" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="D:\workspace\source-code\gif\chrome-capture-gif\libs\font-awesome" />
+      <recent name="D:\workspace\source-code\gif\chrome-capture-gif\libs" />
+      <recent name="D:\workspace\source-code\gif\chrome-capture-gif\css" />
+      <recent name="D:\workspace\source-code\gif\chrome-capture-gif\src" />
     </key>
   </component>
   <component name="RunManager">
@@ -176,6 +175,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="421" y="205" width="598" height="490" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1626513859832" />
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup" timestamp="1626521283160">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" width="670" height="676" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1626521283160" />
   </component>
   <component name="masterDetails">
     <states>
