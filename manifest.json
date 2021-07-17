@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+  "name": "GIF 截图",
+  "description": "该插件用于为当前屏幕的指定区域生成 GIF 动图",
+  "version": "1.0",
+
+  "icons": {
+    "16": "images/ic_black_16.png",
+    "48": "images/ic_black_48.png",
+    "128": "images/ic_black_128.png"
+  },
+
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "activeTab",
+    "storage",
+    "background",
+    "tabCapture",
+    "<all_urls>"
+  ],
+
+  "background": {
+    "persistent": true,
+    "scripts": [
+      "src/background.js"
+    ]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["libs/jquery/jquery.min.js", "src/content-script.js"],
+      "css": ["css/custom.css"],
+      "run_at": "document_start"
+    }
+  ],
+
+  "browser_action": {
+    "default_icon": "images/ic_black_16.png",
+    "default_title": "GIF 截图",
+    "default_popup": "popup.html"
+  },
+
+  "web_accessible_resources": [
+    "images/*"
+  ],
+
+  "minimum_chrome_version": "5"
+}

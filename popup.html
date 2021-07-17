@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>全局配置</title>
+	<meta charset="utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="libs/select2/select2.min.css" rel="stylesheet" type="text/css"/>
+	<link href="css/popup.css" rel="stylesheet" type="text/css"/>
+    <link href="css/form.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="chrome-extension-capture-gif-popup">
+	<div class="chrome-extension-capture-gif-popup-header">
+		GIF 配置
+	</div>
+
+    <div id="chrome-extension-capture-gif-popup-alert"
+         class="chrome-extension-capture-gif-popup-alert">
+    </div>
+
+	<div class="chrome-extension-capture-gif-content chrome-extension-capture-gif-form">
+        <div class="chrome-extension-capture-gif-form-item">
+            <div class="chrome-extension-capture-gif-form-item-label
+                        chrome-extension-capture-gif-required">
+                每秒帧数
+            </div>
+            <select id="chrome-extension-capture-gif-frame"
+                    class="chrome-extension-capture-gif-select">
+            </select>
+        </div>
+
+        <div class="chrome-extension-capture-gif-form-item">
+            <div class="chrome-extension-capture-gif-form-item-label
+                        chrome-extension-capture-gif-required">
+                截图质量
+            </div>
+            <select id="chrome-extension-capture-gif-quality"
+                    class="chrome-extension-capture-gif-select">
+            </select>
+        </div>
+
+	</div>
+
+    <div class="chrome-extension-capture-gif-popup-footer">
+        <div id="chrome-extension-capture-gif-submit-config"
+             class="chrome-extension-capture-gif-button
+                    chrome-extension-capture-gif-button-primary">
+            确定
+        </div>
+    </div>
+
+	<script type="text/javascript" src="libs/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="libs/select2/select2.min.js"></script>
+	<script type="text/javascript" src="src/popup.js"></script>
+</body>
+</html>

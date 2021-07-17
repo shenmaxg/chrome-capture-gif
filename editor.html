@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>截图编辑器</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link href="libs/select2/select2.min.css" rel="stylesheet" type="text/css"/>
+		<link href="css/popup.css" rel="stylesheet" type="text/css"/>
+		<link href="css/form.css" rel="stylesheet" type="text/css"/>
+		<link href="css/editor.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+		<div class="chrome-extension-capture-editor">
+			<div class="chrome-extension-capture-editor-tools">
+				<div class="chrome-extension-capture-editor-tool chrome-extension-capture-editor-pointer">
+					<svg fill="#777777" t="1622182913228"viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8117" width="22" height="22"><path d="M534.048 564.96 704 960l-128 64-148.672-405.696L192 832 192 0l640 512L534.048 564.96z" p-id="8118"></path></svg>
+				</div>
+
+				<div class="chrome-extension-capture-editor-tool chrome-extension-capture-editor-pencil">
+					<svg fill="#777777" t="1622183064398" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10783" width="20" height="20"><path d="M864 0a160 160 0 0 1 128 256l-64 64L704 96l64-64c26.752-20.096 59.968-32 96-32zM64 736L0 1024l288-64 592-592-224-224L64 736z m651.584-372.416l-448 448-55.168-55.168 448-448 55.168 55.168z" fill="" p-id="10784"></path></svg>
+				</div>
+
+				<div class="chrome-extension-capture-editor-tool chrome-extension-capture-editor-rectangle">
+					<svg fill="#777777" t="1622183001347" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="9100" width="24" height="24"><path d="M128 853.333333h768a42.666667 42.666667 0 0 0 42.666667-42.666666V213.333333a42.666667 42.666667 0 0 0-42.666667-42.666666H128a42.666667 42.666667 0 0 0-42.666667 42.666666v597.333334a42.666667 42.666667 0 0 0 42.666667 42.666666zM170.666667 256h682.666666v512H170.666667V256z" fill="" p-id="9101"></path></svg>
+				</div>
+
+				<div class="chrome-extension-capture-editor-tool chrome-extension-capture-editor-text">
+					<svg fill="#777777" t="1622182852843" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5636" width="24" height="24"><path d="M853.333333 170.666667H170.666667a42.666667 42.666667 0 0 0-42.666667 42.666666v128a42.666667 42.666667 0 0 0 85.333333 0V256h256v554.666667H384a42.666667 42.666667 0 0 0 0 85.333333h256a42.666667 42.666667 0 0 0 0-85.333333h-85.333333V256h256v85.333333a42.666667 42.666667 0 0 0 85.333333 0V213.333333a42.666667 42.666667 0 0 0-42.666667-42.666666z" p-id="5637"></path></svg>
+				</div>
+
+				<div class="chrome-extension-capture-editor-horizontal"></div>
+
+				<div class="chrome-extension-capture-editor-tool chrome-extension-capture-editor-undo">
+					<svg fill="#777777" t="1622183168216" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="12550" width="24" height="24"><path d="M512 204.8 512 25.6 256 281.6 512 537.6 512 307.2C680.96 307.2 819.2 445.44 819.2 614.4 819.2 783.36 680.96 921.6 512 921.6 343.04 921.6 204.8 783.36 204.8 614.4L102.4 614.4C102.4 839.68 286.72 1024 512 1024 737.28 1024 921.6 839.68 921.6 614.4 921.6 389.12 737.28 204.8 512 204.8L512 204.8Z" p-id="12551"></path></svg>
+				</div>
+
+				<div class="chrome-extension-capture-editor-tool chrome-extension-capture-editor-save">
+					<svg fill="#777777" t="1622183118861" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11697" width="24" height="24"><path d="M166.016 64A102.4 102.4 0 0 0 64 166.016v627.968A102.4 102.4 0 0 0 166.016 896h627.968A102.4 102.4 0 0 0 896 793.984V258.752L701.248 64z m0 64H192v192c0 35.008 28.992 64 64 64h384c35.008 0 64-28.992 64-64V157.248l128 128v508.8a37.504 37.504 0 0 1-38.016 37.952H704v-192c0-35.008-28.992-64-64-64H320c-35.008 0-64 28.992-64 64v192H166.016A37.504 37.504 0 0 1 128 793.984V166.016C128 144.512 144.512 128 166.016 128zM256 128h192v128h128V128h64v192H256z m64 512h320v192H320z" p-id="11698"></path></svg>
+				</div>
+			</div>
+			<div class="chrome-extension-capture-editor-background">
+				<div class="chrome-extension-capture-editor-container">
+					<img id="chrome-extension-capture-editor-img"/>
+					<canvas id="chrome-extension-capture-editor-canvas"></canvas>
+				</div>
+			</div>
+			<div class="chrome-extension-capture-editor-config" >
+				<div class="chrome-extension-capture-gif-popup-header">
+					高级设置
+				</div>
+				<div class="chrome-extension-capture-gif-content chrome-extension-capture-gif-form">
+					<div class="chrome-extension-capture-gif-form-item">
+						<div class="chrome-extension-capture-gif-form-item-label
+                        chrome-extension-capture-gif-required">
+							颜色
+						</div>
+						<select id="chrome-extension-capture-color-config"
+								class="chrome-extension-capture-gif-select">
+						</select>
+					</div>
+
+					<div class="chrome-extension-capture-gif-form-item">
+						<div class="chrome-extension-capture-gif-form-item-label
+                        chrome-extension-capture-gif-required">
+							画笔大小
+						</div>
+						<select id="chrome-extension-capture-pencil-config"
+								class="chrome-extension-capture-gif-select">
+						</select>
+					</div>
+
+					<div class="chrome-extension-capture-gif-form-item">
+						<div class="chrome-extension-capture-gif-form-item-label
+                        chrome-extension-capture-gif-required">
+							框线大小
+						</div>
+						<select id="chrome-extension-capture-rectangle-config"
+								class="chrome-extension-capture-gif-select">
+						</select>
+					</div>
+
+					<div class="chrome-extension-capture-gif-form-item">
+						<div class="chrome-extension-capture-gif-form-item-label
+                        chrome-extension-capture-gif-required">
+							文字大小
+						</div>
+						<select id="chrome-extension-capture-text-config"
+								class="chrome-extension-capture-gif-select">
+						</select>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript" src="libs/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="libs/fabric/fabric.min.js"></script>
+	<script type="text/javascript" src="libs/gif/gif.js"></script>
+	<script type="text/javascript" src="libs/select2/select2.min.js"></script>
+	<script type="text/javascript" src="./src/editor.js"></script>
+</html>

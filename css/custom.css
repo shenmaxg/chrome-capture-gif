@@ -1,0 +1,156 @@
+.chrome-extension-capture-gif-section {
+    display: none;
+    position: fixed;
+    z-index: 9998;
+    inset: -20px 0px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: crosshair;
+    pointer-events: auto;
+    font-size: 14px;
+}
+
+.chrome-extension-capture-gif-guide {
+    position: absolute;
+    color: white;
+    font-size: 42px;
+    left:50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    user-select: none;
+}
+
+.chrome-extension-capture-gif-capture-section {
+    display: flex;
+    user-select: none;
+    width: 100%;
+    height: 100%;
+}
+
+.chrome-extension-capture-gif-column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chrome-extension-capture-gif-resize-xy {
+    background-color: black;
+    height: 10px;
+    width: 10px;
+    cursor: nw-resize;
+}
+
+.chrome-extension-capture-gif-resize-x {
+    background-color: black;
+    height: calc(100% - 20px);
+    width: 10px;
+    cursor: ew-resize;
+}
+
+.chrome-extension-capture-gif-resize-xy2 {
+    background-color: black;
+    height: 10px;
+    width: 10px;
+    cursor: sw-resize;
+}
+
+
+.chrome-extension-capture-gif-resize-x2y {
+    background-color: black;
+    height: 10px;
+    width: 10px;
+    cursor: ne-resize;
+}
+
+.chrome-extension-capture-gif-resize-x2 {
+    background-color: black;
+    height: calc(100% - 20px);
+    width: 10px;
+    cursor: ew-resize;
+}
+
+.chrome-extension-capture-gif-resize-x2y2 {
+    background-color: black;
+    height: 10px;
+    width: 10px;
+    cursor: se-resize;
+}
+
+.chrome-extension-capture-gif-resize-y {
+    background-color: black;
+    width: 100%;
+    height: 10px;
+    cursor: ns-resize;
+}
+
+.chrome-extension-capture-gif-move-top {
+    height: 40px;
+    background-color: black;
+    color: white;
+    cursor: move;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.chrome-extension-capture-gif-move-bottom {
+    position: relative;
+    background-color: black;
+    height: 40px;
+    color: white;
+    cursor: move;
+}
+
+.chrome-extension-capture-gif-center {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.chrome-extension-capture-gif-resize-y2 {
+    background-color: black;
+    width: 100%;
+    height: 10px;
+    cursor: ns-resize;
+}
+
+.chrome-extension-capture-gif-close {
+    cursor: pointer;
+    float: right;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.chrome-extension-capture-gif-frame-info {
+    position: absolute;
+    top: calc(50% + 5px);
+    transform: translateY(-50%);
+    font-size: 14px;
+}
+
+.chrome-extension-capture-gif-time-info {
+    position: absolute;
+    top: calc(50% + 5px);
+    transform: translateY(-50%);
+    font-size: 14px;
+    right: 0;
+}
+
+.chrome-extension-capture-gif-operation {
+    position: absolute;
+    width: 70px;
+    height: 30px;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: calc(50% + 5px);
+    display: flex;
+}
+
+.chrome-extension-capture-gif-img-wrapper {
+    cursor: pointer;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+    border-radius: 16px;
+    background-color: white;
+    margin-left: 10px;
+}

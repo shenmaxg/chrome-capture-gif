@@ -1,0 +1,42 @@
+.chrome-extension-capture-gif-popup {
+    width: 300px;
+    margin: 0;
+    padding: 0;
+}
+
+.chrome-extension-capture-gif-popup-header {
+    padding: 12px 24px;
+    color: rgba(0,0,0,0.85);
+    font-size: 16px;
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    border-radius: 4px 4px 0 0
+}
+
+.chrome-extension-capture-gif-popup-alert {
+    margin: 10px 24px 0 24px;
+    line-height: 32px;
+    text-align: left;
+    padding: 0 8px;
+    border-radius: 4px;
+}
+
+.chrome-extension-capture-gif-with-valid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chrome-extension-capture-gif-content {
+    margin-bottom: 120px;
+}
+
+.chrome-extension-capture-gif-popup-footer {
+    padding: 16px 24px;
+    display: flex;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+#chrome-extension-capture-gif-validate-token {
+    margin-left: 10px;
+}
