@@ -177,8 +177,8 @@ function adjustPagePointEvent() {
 
 // 初始化 DOM
 function initSection() {
-    clientHeight = document.body.clientHeight;
-    clientWidth = document.body.clientWidth;
+    clientHeight = window.innerHeight;
+    clientWidth = window.innerWidth;
 
     page = $('.chrome-extension-capture-gif-section');
     guide= $('.chrome-extension-capture-gif-guide');
@@ -275,9 +275,11 @@ function bindCaptureEvent() {
 
             const params = {
                 sx: topX + 10,
-                sy: topY + 30,
+                sy: topY + 50,
                 sWidth: bottomX - topX - 20,
-                sHeight: bottomY - topY - 60,
+                sHeight: bottomY - topY - 100,
+                clientHeight,
+                clientWidth,
                 quality
             };
 
@@ -338,9 +340,11 @@ function startRecording() {
 function recordingFrame() {
     const params = {
         sx: topX + 10,
-        sy: topY + 30,
+        sy: topY + 50,
         sWidth: bottomX - topX - 20,
-        sHeight: bottomY - topY - 60
+        sHeight: bottomY - topY - 100,
+        clientWidth,
+        clientHeight
     };
 
     port.postMessage({cmd: 'capture gif', params});
@@ -356,9 +360,11 @@ function stopRecording() {
 
     const params = {
         sx: topX + 10,
-        sy: topY + 30,
+        sy: topY + 50,
         sWidth: bottomX - topX - 20,
-        sHeight: bottomY - topY - 60
+        sHeight: bottomY - topY - 100,
+        clientWidth,
+        clientHeight
     };
 
     port.postMessage({cmd: "stop recording", params});
@@ -424,7 +430,7 @@ function bindCaptureMoveEvent() {
 // 更新区域大小文本
 function updateCaptureSizeText() {
     const width = Math.ceil(bottomX - topX) - 20;
-    const height = Math.ceil(bottomY - topY) - 60;
+    const height = Math.ceil(bottomY - topY) - 100;
 
     baseInfoArea.text(`GIF截图 ${width} x ${height}`);
 }

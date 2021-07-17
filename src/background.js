@@ -59,9 +59,9 @@ chrome.runtime.onConnect.addListener(function(e) {
 });
 
 // 截屏
-function handlerCaptureScreenEvent({sx, sy, sWidth, sHeight, quality}) {
+function handlerCaptureScreenEvent({sx, sy, sWidth, sHeight, quality, clientHeight, clientWidth}) {
     capture(quality).then((dataUrl) => {
-        slice(dataUrl,sx, sy, sWidth, sHeight).then((canvas) => {
+        slice(dataUrl,sx, sy, sWidth, sHeight, clientWidth, clientHeight).then((canvas) => {
             window.open("editor.html").frameList = [canvas];
         })
     });
@@ -108,7 +108,7 @@ function capture(quality) {
 }
 
 // 图片切割
-function slice(dataUrl, sx, sy, sWidth, sHeight) {
+function slice(dataUrl, sx, sy, sWidth, sHeight, clientWidth, clientHeight) {
     return new Promise((resolve, reject) => {
         try {
             // 创建画布
@@ -116,13 +116,17 @@ function slice(dataUrl, sx, sy, sWidth, sHeight) {
             if (canvas.length === 0) {
                 canvas = document.createElement("canvas");
             }
-            canvas.width = sWidth;
-            canvas.height = sHeight;
+
+            const devicePixelRatio = window.devicePixelRatio
+            canvas.width = sWidth * devicePixelRatio;
+            canvas.height = sHeight * devicePixelRatio;
+            canvas.style.width = sWidth;
+            canvas.style.height = sHeight;
             const context = canvas.getContext("2d");
 
-            dataUrl2Img(dataUrl).then((img) => {
+            dataUrl2Img(dataUrl, clientWidth, clientHeight).then((img) => {
                 // 裁剪 canvas
-                context.drawImage(img, sx, sy, sWidth, sHeight, 0, 0, sWidth, sHeight);
+                context.drawImage(img, sx * devicePixelRatio, sy * devicePixelRatio, sWidth * devicePixelRatio, sHeight * devicePixelRatio, 0, 0, sWidth * devicePixelRatio, sHeight * devicePixelRatio);
                 resolve(canvas);
             });
         } catch (e) {
@@ -132,11 +136,15 @@ function slice(dataUrl, sx, sy, sWidth, sHeight) {
 }
 
 // dataUrl 转变为 img
-function dataUrl2Img(dataUrl) {
+function dataUrl2Img(dataUrl, clientWidth, clientHeight) {
     return new Promise((resolve, reject) => {
         try {
             const img = new Image();
 
+            img.width = clientWidth;
+            img.height = clientHeight;
+            img.style.width = clientWidth;
+            img.style.height = clientHeight;
             img.src = dataUrl;
             img.onload = function(){
                 resolve(img);
